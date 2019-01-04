@@ -1,10 +1,10 @@
 import React from 'react'
 
-const BannerLanding = (props) => (
+const BannerTourismus = (props) => (
     <section id="banner" className="style2">
         <div className="inner">
             <header className="major">
-                <h1>Landing</h1>
+                <h1>Tourismus</h1>
             </header>
             <div className="content">
                 <p>Lorem ipsum dolor sit amet nullam consequat<br />
@@ -14,4 +14,4 @@ const BannerLanding = (props) => (
     </section>
 )
 
-export default BannerLanding
+export default BannerTourismus

@@ -4,12 +4,9 @@ import Helmet from 'react-helmet'
 import Layout from '../components/layout'
 import Banner from '../components/Banner'
 
-import pic01 from '../assets/images/pic01.jpg'
-import pic02 from '../assets/images/pic02.jpg'
-import pic03 from '../assets/images/pic03.jpg'
-import pic04 from '../assets/images/pic04.jpg'
-import pic05 from '../assets/images/pic05.jpg'
-import pic06 from '../assets/images/pic06.jpg'
+import wohnung from '../assets/images/leuchtturm.jpg'
+import nessmersiel from '../assets/images/nessmersiel.jpg'
+import tourismus from '../assets/images/wattenmeer.jpg'
 
 class HomeIndex extends React.Component {
     render() {
@@ -17,10 +14,10 @@ class HomeIndex extends React.Component {
         return (
             <Layout>
                 <Helmet
-                    title="Gatsby Starter - Forty"
+                    title="Ferienwohnung Nessmersiel"
                     meta={[
-                        { name: 'description', content: 'Sample' },
-                        { name: 'keywords', content: 'sample, something' },
+                        { name: 'description', content: 'Ferienwohnung Nessmersiel' },
+                        { name: 'keywords', content: 'ferienwohnung, nessmersiel, dornum, nordsee, strand, urlaub' },
                     ]}
                 >
                 </Helmet>
@@ -29,47 +26,26 @@ class HomeIndex extends React.Component {
 
                 <div id="main">
                     <section id="one" className="tiles">
-                        <article style={{backgroundImage: `url(${pic01})`}}>
+                        <article style={{backgroundImage: `url(${wohnung})`}}>
                             <header className="major">
-                                <h3>Aliquam</h3>
+                                <h3>Die Wohnung</h3>
                                 <p>Ipsum dolor sit amet</p>
                             </header>
-                            <Link to="/landing" className="link primary"></Link>
+                            <Link to="/wohnung" className="link primary"></Link>
                         </article>
-                        <article style={{backgroundImage: `url(${pic02})`}}>
+                        <article style={{backgroundImage: `url(${nessmersiel})`}}>
                             <header className="major">
-                                <h3>Tempus</h3>
+                                <h3>Nessmersiel</h3>
+                                <p>Direkt an der Küste gelegen mit Fähre nach Baltrum</p>
+                            </header>
+                            <Link to="/nessmersiel" className="link primary"></Link>
+                        </article>
+                        <article style={{backgroundImage: `url(${tourismus})`}}>
+                            <header className="major">
+                                <h3>Tourismus</h3>
                                 <p>feugiat amet tempus</p>
                             </header>
-                            <Link to="/landing" className="link primary"></Link>
-                        </article>
-                        <article style={{backgroundImage: `url(${pic03})`}}>
-                            <header className="major">
-                                <h3>Magna</h3>
-                                <p>Lorem etiam nullam</p>
-                            </header>
-                            <Link to="/landing" className="link primary"></Link>
-                        </article>
-                        <article style={{backgroundImage: `url(${pic04})`}}>
-                            <header className="major">
-                                <h3>Ipsum</h3>
-                                <p>Nisl sed aliquam</p>
-                            </header>
-                            <Link to="/landing" className="link primary"></Link>
-                        </article>
-                        <article style={{backgroundImage: `url(${pic05})`}}>
-                            <header className="major">
-                                <h3>Consequat</h3>
-                                <p>Ipsum dolor sit amet</p>
-                            </header>
-                            <Link to="/landing" className="link primary"></Link>
-                        </article>
-                        <article style={{backgroundImage: `url(${pic06})`}}>
-                            <header className="major">
-                                <h3>Etiam</h3>
-                                <p>Feugiat amet tempus</p>
-                            </header>
-                            <Link to="/landing" className="link primary"></Link>
+                            <Link to="/tourismus" className="link primary"></Link>
                         </article>
                     </section>
                     <section id="two">
