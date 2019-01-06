@@ -2,9 +2,9 @@ import React from 'react'
 import { Link } from 'gatsby'
 import Helmet from 'react-helmet'
 import Layout from '../components/layout'
-import BannerTourismus from '../components/BannerTourismus'
+import BannerNessmersiel from '../components/BannerNessmersiel'
 
-import sturmfrei from '../assets/images/pic08.jpg'
+import sturmfrei from '../assets/images/sturmfrei.jpg'
 
 const Landing = (props) => (
     <Layout>
@@ -13,7 +13,7 @@ const Landing = (props) => (
             <meta name="description" content="Landing Page" />
         </Helmet>
 
-        <BannerTourismus />
+        <BannerNessmersiel />
 
         <div id="main">
             <section id="one">
@@ -26,7 +26,7 @@ const Landing = (props) => (
             </section>
             <section id="two" className="spotlights">
                 <section>
-                    <Link to="/generic" className="image">
+                    <Link to="/sturmfrei" className="image">
                         <img src={sturmfrei} alt="" />
                     </Link>
                     <div className="content">
@@ -34,9 +34,9 @@ const Landing = (props) => (
                             <header className="major">
                                 <h3>Sturmfrei</h3>
                             </header>
-                            <p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.</p>
+                            <p>Das Sturmfrei ist ein Indoor Spiel- & Erlebnispark für Jung und Alt.</p>
                             <ul className="actions">
-                                <li><Link to="/sturmfrei" className="button">Learn more</Link></li>
+                                <li><Link to="/sturmfrei" className="button">Entdecken</Link></li>
                             </ul>
                         </div>
                     </div>

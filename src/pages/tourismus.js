@@ -27,7 +27,7 @@ const Landing = (props) => (
             </section>
             <section id="two" className="spotlights">
                 <section>
-                    <Link to="/generic" className="image">
+                    <Link to="/baltrum" className="image">
                         <img src={baltrum} alt="" />
                     </Link>
                     <div className="content">
@@ -43,7 +43,7 @@ const Landing = (props) => (
                     </div>
                 </section>
                 <section>
-                    <Link to="/generic" className="image">
+                    <Link to="/wattenmeer" className="image">
                         <img src={wattenmeer} alt="" />
                     </Link>
                     <div className="content">

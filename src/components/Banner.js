@@ -8,10 +8,10 @@ const Banner = (props) => (
             </header>
             <div className="content">
                 <p>
-                    Herzlich willkommen zu unserer Ferienwohnung in dem Küstenord Nessmersiel.
+                    Herzlich willkommen zu unserer Ferienwohnung in dem Küstenort Nessmersiel.
                 </p>
                 <ul className="actions">
-                    <li><a href="#one" className="button next scrolly">Get Started</a></li>
+                    <li><a href="#contact" className="button next scrolly">Kontakt</a></li>
                 </ul>
             </div>
         </div>
