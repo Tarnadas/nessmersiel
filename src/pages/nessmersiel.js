@@ -3,6 +3,7 @@ import { Link } from 'gatsby'
 import Helmet from 'react-helmet'
 import Layout from '../components/layout'
 import BannerNessmersiel from '../components/BannerNessmersiel'
+import BackButton from '../components/BackButton'
 
 import sturmfrei from '../assets/images/sturmfrei.jpg'
 
@@ -18,6 +19,7 @@ const Landing = (props) => (
         <div id="main">
             <section id="one">
                 <div className="inner">
+                    <BackButton to="/" />
                     <header className="major">
                         <h2>Nessmersiel</h2>
                     </header>

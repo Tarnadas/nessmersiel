@@ -2,6 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import Layout from '../components/layout'
 import BannerSturmfrei from '../components/BannerSturmfrei'
+import BackButton from '../components/BackButton'
 
 import sturmfrei from '../assets/images/sturmfrei.jpg'
 import indoor from '../assets/images/sturmfrei_indoor.jpg'
@@ -18,6 +19,7 @@ const Wohnung = (props) => (
         <div id="main" className="alt">
             <section id="one">
                 <div className="inner">
+                    <BackButton to="/nessmersiel" />
                     <header className="major">
                         <h1>Sturmfrei</h1>
                     </header>

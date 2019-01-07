@@ -3,6 +3,7 @@ import { Link } from 'gatsby'
 import Helmet from 'react-helmet'
 import Layout from '../components/layout'
 import BannerTourismus from '../components/BannerTourismus'
+import BackButton from '../components/BackButton'
 
 import baltrum from '../assets/images/pic10.jpg'
 import wattenmeer from '../assets/images/wattenmeer.jpg'
@@ -19,6 +20,7 @@ const Landing = (props) => (
         <div id="main">
             <section id="one">
                 <div className="inner">
+                    <BackButton to="/" />
                     <header className="major">
                         <h2>Tourismus</h2>
                     </header>

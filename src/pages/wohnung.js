@@ -2,6 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import Layout from '../components/layout'
 import BannerWohnung from '../components/BannerWohnung'
+import BackButton from '../components/BackButton'
 
 import pic11 from '../assets/images/pic11.jpg'
 
@@ -17,6 +18,7 @@ const Wohnung = (props) => (
         <div id="main" className="alt">
             <section id="one">
                 <div className="inner">
+                    <BackButton to="/" />
                     <span className="image main"><img src={pic11} alt="" /></span>
                     <p>Hier steht was über die Wohnung.</p>
                 </div>

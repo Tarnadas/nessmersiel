@@ -7,8 +7,7 @@ const BannerWohnung = (props) => (
                 <h1>Ferienwohnung</h1>
             </header>
             <div className="content">
-                <p>Lorem ipsum dolor sit amet nullam consequat<br />
-                sed veroeros. tempus adipiscing nulla.</p>
+                <p>Hier steht was über die Wohnung</p>
             </div>
         </div>
     </section>

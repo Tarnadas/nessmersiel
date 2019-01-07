@@ -7,8 +7,7 @@ const BannerNessmersiel = (props) => (
                 <h1>Nessmersiel</h1>
             </header>
             <div className="content">
-                <p>Lorem ipsum dolor sit amet nullam consequat<br />
-                sed veroeros. tempus adipiscing nulla.</p>
+                <p>Hier steht was über Nessmersiel.</p>
             </div>
         </div>
     </section>
