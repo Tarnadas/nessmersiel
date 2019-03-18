@@ -1,25 +1,26 @@
 module.exports = {
   siteMetadata: {
-    title: "Ferienwohnung Nessmersiel",
-    author: "Mario Reder",
-    description: "Ferienwohnung Nessmersiel"
+    title: 'Ferienwohnung Nessmersiel',
+    author: 'Mario Reder',
+    description: 'Ferienwohnung Nessmersiel',
+    keywords: ['ferienwohnung', 'nessmersiel', 'dornum', 'nordsee', 'strand', 'urlaub'],
+    siteUrl: 'https://ferienwohnung-nessmersiel.com'
   },
   plugins: [
     'gatsby-plugin-react-helmet',
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: 'gatsby-starter-default',
-        short_name: 'starter',
-        start_url: '/',
-        background_color: '#663399',
-        theme_color: '#663399',
-        display: 'minimal-ui',
-        icon: 'src/assets/images/website-icon.png', // This path is relative to the root of the site.
-      },
-    },
     'gatsby-plugin-sass',
-    'gatsby-plugin-offline'
-  ],
-  pathPrefix: '/nessmersiel',
+    'gatsby-plugin-emotion',
+    'gatsby-plugin-typescript',
+    'gatsby-plugin-offline',
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sitemap',
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-103677465-3',
+        anonymize: true,
+        respectDNT: true
+      }
+    }
+  ]
 }
