@@ -21,6 +21,22 @@ module.exports = {
         anonymize: true,
         respectDNT: true
       }
-    }
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'wohnung',
+        path: `${__dirname}/src/assets/images/wohnung`
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/assets/images`
+      }
+    },
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`
   ]
 }

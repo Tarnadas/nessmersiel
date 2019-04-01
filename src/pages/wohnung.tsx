@@ -1,10 +1,32 @@
 import React from 'react'
 import Helmet from 'react-helmet'
+import { graphql } from 'gatsby'
+import Img, { FluidObject, FixedObject } from 'gatsby-image'
+import ImageGallery from 'react-image-gallery'
+
 import Layout from '../components/layout'
 import BannerWohnung from '../components/BannerWohnung'
 import BackButton from '../components/BackButton'
 
-const Wohnung = (): JSX.Element => (
+interface WohnungProps {
+  data: {
+    allFile: {
+      edges: {
+        node: {
+          relativePath: string
+          absolutePath: string
+          childImageSharp: {
+            fixed: FixedObject
+            fluid: FluidObject
+          }
+        }
+      }[]
+    }
+    relativePath: string
+  }
+}
+
+const Wohnung = ({ data }: WohnungProps): JSX.Element => (
   <Layout>
     <Helmet>
       <title>Ferienwohnung Nessmersiel - Die Wohnung</title>
@@ -17,8 +39,29 @@ const Wohnung = (): JSX.Element => (
       <section id="one">
         <div className="inner">
           <BackButton to="/" />
-          <span className="image main">{/* <img src={pic11} alt="" /> */}</span>
-          <p>Die Wohnung ist noch nicht bezugsfertig. Wir informieren Sie, wenn dies soweit ist.</p>
+          <ImageGallery
+            showBullets={true}
+            items={data.allFile.edges.map(edge => ({
+              original: edge.node.childImageSharp.fluid,
+              thumbnail: edge.node.childImageSharp.fixed
+            }))}
+            renderItem={item => (
+              <div className="image-gallery-image">
+                <Img fluid={item.original} />
+                {item.description && <span className="image-gallery-description">{item.description}</span>}
+              </div>
+            )}
+            renderThumbInner={item => (
+              <div className="image-gallery-thumbnail-inner">
+                <Img fixed={item.thumbnail} alt={item.thumbnailAlt} title={item.thumbnailTitle} />
+                {item.thumbnailLabel && <div className="image-gallery-thumbnail-label">{item.thumbnailLabel}</div>}
+              </div>
+            )}
+          />
+          <p>Wohnzimmer + Küche, Schlafzimmer, Bad</p>
+          <p>
+            Falls Sie Interesse haben die Wohnung zu buchen, dann können Sie sich gerne entweder telefonisch oder per Mail bei uns melden.
+          </p>
         </div>
       </section>
     </div>
@@ -26,3 +69,24 @@ const Wohnung = (): JSX.Element => (
 )
 
 export default Wohnung
+
+export const query = graphql`
+  query WohnungQuery {
+    allFile(filter: { sourceInstanceName: { eq: "wohnung" } }) {
+      edges {
+        node {
+          relativePath
+          absolutePath
+          childImageSharp {
+            fixed(width: 92, height: 92) {
+              ...GatsbyImageSharpFixed
+            }
+            fluid {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+      }
+    }
+  }
+`

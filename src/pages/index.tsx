@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 import Layout from '../components/layout'
 import Banner from '../components/Banner'
 
-import wohnung from '../assets/images/leuchtturm.jpg'
+import wohnung from '../assets/images/wohnung/wohnzimmer0.jpeg'
 import nessmersiel from '../assets/images/nessmersiel.jpg'
 import tourismus from '../assets/images/wattenmeer.jpg'
 
