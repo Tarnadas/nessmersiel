@@ -1,14 +1,14 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link, graphql } from 'gatsby'
+import Img from 'gatsby-image'
 import Helmet from 'react-helmet'
+
 import Layout from '../components/layout'
 import BannerTourismus from '../components/BannerTourismus'
 import BackButton from '../components/BackButton'
+import { ImageQuery } from '../models/ImageQuery'
 
-import baltrum from '../assets/images/baltrum.jpg'
-import wattenmeer from '../assets/images/wattenmeer.jpg'
-
-const Tourismus = (): JSX.Element => (
+const Tourismus = (props: { data: ImageQuery }): JSX.Element => (
   <Layout>
     <Helmet>
       <title>Ferienwohnung Nessmersiel - Tourismus</title>
@@ -29,7 +29,7 @@ const Tourismus = (): JSX.Element => (
       <section id="two" className="spotlights">
         <section>
           <Link to="/baltrum" className="image">
-            <img src={baltrum} alt="" />
+            <Img fluid={props.data.allFile.edges.find(edge => edge.node.name === 'baltrum').node.childImageSharp.fluid} alt="Baltrum" />
           </Link>
           <div className="content">
             <div className="inner">
@@ -49,7 +49,10 @@ const Tourismus = (): JSX.Element => (
         </section>
         <section>
           <Link to="/wattenmeer" className="image">
-            <img src={wattenmeer} alt="" />
+            <Img
+              fluid={props.data.allFile.edges.find(edge => edge.node.name === 'wattenmeer').node.childImageSharp.fluid}
+              alt="Wattenmeer"
+            />
           </Link>
           <div className="content">
             <div className="inner">
@@ -69,9 +72,49 @@ const Tourismus = (): JSX.Element => (
             </div>
           </div>
         </section>
+        <section>
+          <Link to="/seehund" className="image">
+            <Img
+              fluid={props.data.allFile.edges.find(edge => edge.node.name === 'seehundstation0').node.childImageSharp.fluid}
+              alt="Seehundstation"
+            />
+          </Link>
+          <div className="content">
+            <div className="inner">
+              <header className="major">
+                <h3>Seehundstation Norddeich</h3>
+              </header>
+              <p>Die Seehundstation sorgt für die Rehabilitation und Aufzucht verwaister Jungtiere.</p>
+              <ul className="actions">
+                <li>
+                  <Link to="/seehund" className="button">
+                    Entdecken
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
       </section>
     </div>
   </Layout>
 )
 
 export default Tourismus
+
+export const query = graphql`
+  query TourismusQuery {
+    allFile {
+      edges {
+        node {
+          name
+          childImageSharp {
+            fluid(maxWidth: 600) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+      }
+    }
+  }
+`

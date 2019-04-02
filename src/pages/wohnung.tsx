@@ -1,32 +1,15 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
-import Img, { FluidObject, FixedObject } from 'gatsby-image'
+import Img from 'gatsby-image'
 import ImageGallery from 'react-image-gallery'
 
 import Layout from '../components/layout'
 import BannerWohnung from '../components/BannerWohnung'
 import BackButton from '../components/BackButton'
+import { ImageQuery } from '../models/ImageQuery'
 
-interface WohnungProps {
-  data: {
-    allFile: {
-      edges: {
-        node: {
-          relativePath: string
-          absolutePath: string
-          childImageSharp: {
-            fixed: FixedObject
-            fluid: FluidObject
-          }
-        }
-      }[]
-    }
-    relativePath: string
-  }
-}
-
-const Wohnung = ({ data }: WohnungProps): JSX.Element => (
+const Wohnung = ({ data }: { data: ImageQuery }): JSX.Element => (
   <Layout>
     <Helmet>
       <title>Ferienwohnung Nessmersiel - Die Wohnung</title>
@@ -75,13 +58,11 @@ export const query = graphql`
     allFile(filter: { sourceInstanceName: { eq: "wohnung" } }) {
       edges {
         node {
-          relativePath
-          absolutePath
           childImageSharp {
             fixed(width: 92, height: 92) {
               ...GatsbyImageSharpFixed
             }
-            fluid {
+            fluid(quality: 90) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }

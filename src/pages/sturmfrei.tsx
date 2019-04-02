@@ -1,13 +1,14 @@
 import React from 'react'
 import Helmet from 'react-helmet'
+import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
+
 import Layout from '../components/layout'
 import BannerSturmfrei from '../components/BannerSturmfrei'
 import BackButton from '../components/BackButton'
+import { ImageQuery } from '../models/ImageQuery'
 
-import sturmfrei from '../assets/images/sturmfrei.jpg'
-import indoor from '../assets/images/sturmfrei_indoor.jpg'
-
-const Sturmfrei = (): JSX.Element => (
+const Sturmfrei = (props: { data: ImageQuery }): JSX.Element => (
   <Layout>
     <Helmet>
       <title>Ferienwohnung Nessmersiel - Sturmfrei</title>
@@ -24,7 +25,7 @@ const Sturmfrei = (): JSX.Element => (
             <h1>Sturmfrei</h1>
           </header>
           <span className="image main">
-            <img src={sturmfrei} alt="" />
+            <Img fluid={props.data.allFile.edges.find(edge => edge.node.name === 'sturmfrei').node.childImageSharp.fluid} alt="Sturmfrei" />
           </span>
           <p>
             <a href="//www.sturmfrei-nessmersiel.de" target="_blank">
@@ -32,8 +33,11 @@ const Sturmfrei = (): JSX.Element => (
             </a>
           </p>
           <p>
-            <span className="image left">
-              <img src={indoor} alt="" />
+            <span className="image left full">
+              <Img
+                fluid={props.data.allFile.edges.find(edge => edge.node.name === 'sturmfrei_indoor').node.childImageSharp.fluid}
+                alt="Sturmfrei Indoor"
+              />
             </span>
             Ohne-Sonne-Wetter an der Nordsee? Kein Problem, im Indoor-Spielpark Sturmfrei ist immer etwas los. Der über 3.000 qm große
             Indoorspielplatz in Neßmersiel lässt keine Kinderwünsche offen. Rutschen, klettern, hüpfen - hier ist Action pur angesagt, das
@@ -82,3 +86,20 @@ const Sturmfrei = (): JSX.Element => (
 )
 
 export default Sturmfrei
+
+export const query = graphql`
+  query SturmfreiQuery {
+    allFile {
+      edges {
+        node {
+          name
+          childImageSharp {
+            fluid(maxWidth: 800) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+      }
+    }
+  }
+`

@@ -1,12 +1,10 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 import Helmet from 'react-helmet'
+
 import Layout from '../components/layout'
 import Banner from '../components/Banner'
-
-import wohnung from '../assets/images/wohnung/wohnzimmer0.jpeg'
-import nessmersiel from '../assets/images/nessmersiel.jpg'
-import tourismus from '../assets/images/wattenmeer.jpg'
+import { ImageQuery } from '../models/ImageQuery'
 
 interface PageTemplateProps {
   data: {
@@ -17,10 +15,10 @@ interface PageTemplateProps {
         keywords: string[]
       }
     }
-  }
+  } & ImageQuery
 }
 
-const index: React.SFC<PageTemplateProps> = ({ data }): JSX.Element => (
+const index: React.SFC<PageTemplateProps> = ({ data }: PageTemplateProps): JSX.Element => (
   <Layout>
     <Helmet
       title={data.site.siteMetadata.title}
@@ -34,21 +32,33 @@ const index: React.SFC<PageTemplateProps> = ({ data }): JSX.Element => (
 
     <div id="main">
       <section id="one" className="tiles">
-        <article style={{ backgroundImage: `url(${wohnung})` }}>
+        <article
+          style={{
+            backgroundImage: `url(${data.allFile.edges.find(edge => edge.node.name === 'wohnzimmer0').node.childImageSharp.fluid.src})`
+          }}
+        >
           <header className="major">
             <h3>Die Wohnung</h3>
             <p>Gerade mal 200 Meter vom Deich entfernt im ruhigen und idyllischem Ferienort Nessmersiel.</p>
           </header>
           <Link to="/wohnung" className="link primary" />
         </article>
-        <article style={{ backgroundImage: `url(${nessmersiel})` }}>
+        <article
+          style={{
+            backgroundImage: `url(${data.allFile.edges.find(edge => edge.node.name === 'nessmersiel').node.childImageSharp.fluid.src})`
+          }}
+        >
           <header className="major">
-            <h3>Nessmersiel</h3>
+            <h3>Neßmersiel</h3>
             <p>Direkt an der Küste gelegen mit Fähre nach Baltrum</p>
           </header>
           <Link to="/nessmersiel" className="link primary" />
         </article>
-        <article style={{ backgroundImage: `url(${tourismus})` }}>
+        <article
+          style={{
+            backgroundImage: `url(${data.allFile.edges.find(edge => edge.node.name === 'wattenmeer').node.childImageSharp.fluid.src})`
+          }}
+        >
           <header className="major">
             <h3>Tourismus</h3>
             <p>
@@ -79,6 +89,18 @@ export const query = graphql`
         title
         description
         keywords
+      }
+    }
+    allFile {
+      edges {
+        node {
+          name
+          childImageSharp {
+            fluid(maxWidth: 1000) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
       }
     }
   }
