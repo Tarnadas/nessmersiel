@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
+import { FluidObject } from 'gatsby-image'
 import Helmet from 'react-helmet'
 
 import Layout from '../components/layout'
 import Banner from '../components/Banner'
-import { ImageQuery } from '../models/ImageQuery'
 
 interface PageTemplateProps {
   data: {
@@ -15,7 +15,22 @@ interface PageTemplateProps {
         keywords: string[]
       }
     }
-  } & ImageQuery
+    wohnzimmer0: {
+      childImageSharp: {
+        fluid: FluidObject
+      }
+    }
+    nessmersiel: {
+      childImageSharp: {
+        fluid: FluidObject
+      }
+    }
+    wattenmeer: {
+      childImageSharp: {
+        fluid: FluidObject
+      }
+    }
+  }
 }
 
 const index: React.SFC<PageTemplateProps> = ({ data }: PageTemplateProps): JSX.Element => (
@@ -34,7 +49,7 @@ const index: React.SFC<PageTemplateProps> = ({ data }: PageTemplateProps): JSX.E
       <section id="one" className="tiles">
         <article
           style={{
-            backgroundImage: `url(${data.allFile.edges.find(edge => edge.node.name === 'wohnzimmer0').node.childImageSharp.fluid.src})`
+            backgroundImage: `url(${data.wohnzimmer0.childImageSharp.fluid.src})`
           }}
         >
           <header className="major">
@@ -45,7 +60,7 @@ const index: React.SFC<PageTemplateProps> = ({ data }: PageTemplateProps): JSX.E
         </article>
         <article
           style={{
-            backgroundImage: `url(${data.allFile.edges.find(edge => edge.node.name === 'nessmersiel').node.childImageSharp.fluid.src})`
+            backgroundImage: `url(${data.nessmersiel.childImageSharp.fluid.src})`
           }}
         >
           <header className="major">
@@ -56,7 +71,7 @@ const index: React.SFC<PageTemplateProps> = ({ data }: PageTemplateProps): JSX.E
         </article>
         <article
           style={{
-            backgroundImage: `url(${data.allFile.edges.find(edge => edge.node.name === 'wattenmeer').node.childImageSharp.fluid.src})`
+            backgroundImage: `url(${data.wattenmeer.childImageSharp.fluid.src})`
           }}
         >
           <header className="major">
@@ -67,14 +82,6 @@ const index: React.SFC<PageTemplateProps> = ({ data }: PageTemplateProps): JSX.E
           </header>
           <Link to="/tourismus" className="link primary" />
         </article>
-      </section>
-      <section id="two">
-        <div className="inner">
-          <p>
-            Die Wohnung ist noch nicht bezugsfertig, wird dies aber bald sein. Bilder folgen auch demnächst. Sie können uns auch ganz
-            einfach telefonisch oder per E-Mail erreichen unter den unten aufgelisteten Kontaktdaten.
-          </p>
-        </div>
       </section>
     </div>
   </Layout>
@@ -91,15 +98,24 @@ export const query = graphql`
         keywords
       }
     }
-    allFile {
-      edges {
-        node {
-          name
-          childImageSharp {
-            fluid(maxWidth: 1000) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-          }
+    wohnzimmer0: file(name: { eq: "00_wohnzimmer0" }) {
+      childImageSharp {
+        fluid(maxWidth: 1000) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    nessmersiel: file(name: { eq: "nessmersiel" }) {
+      childImageSharp {
+        fluid(maxWidth: 1000) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    wattenmeer: file(name: { eq: "wattenmeer" }) {
+      childImageSharp {
+        fluid(maxWidth: 1000) {
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }

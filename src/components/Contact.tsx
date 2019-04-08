@@ -19,7 +19,7 @@ const Contact = (props): JSX.Element => (
             <span className="icon alt fa-home" />
             <h3>Adresse</h3>
             <span>
-              Harry Holschuh
+              Manuela Holschuh
               <br />
               Schwalbennest 5<br />
               26553 Nessmersiel
