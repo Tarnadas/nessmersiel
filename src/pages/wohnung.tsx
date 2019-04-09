@@ -30,9 +30,9 @@ const Wohnung = ({ data }: { data: ImageQuery }): JSX.Element => (
             Das Wohn-/Esszimmer ist mit Fernseher, einer gemütlichen Couch, Relaxsessel, rundem Tisch und Sitzgelegenheiten ausgestattet. In
             der Küchenzeile befinden sich ein E-Herd, Ceranfeld und Backofen, Mikrowelle, Kühlschrank mit Gefrierfach und genügend
             Kleingeräte. Im Schlafzimmer ist ein großes 2x2 Meter Bett und ausreichend Platz für ein Kinderreisebett, welches wir kostenlos
-            zur Verfügung stellen. Ein Kinderhochstuhl ist auch vorhanden. Auch ist ein großer Südbalkon vorhanden, wo sie ihre Pläne für
+            zur Verfügung stellen. Ein Kinderhochstuhl ist auch vorhanden. Auch ist ein großer Südbalkon vorhanden, wo sie Ihre Pläne für
             den nächsten Tag planen können. Ein Waschraum mit Waschmaschine und Trockner ist kostenpflichtig und ein abschließbarer Raum für
-            ihre Fahrräder ist vorhanden.
+            Ihre Fahrräder ist vorhanden.
           </p>
           <p>Haustiere sind nicht erlaubt. WLAN können wir leider auch nicht anbieten.</p>
           <ImageGallery
@@ -66,11 +66,11 @@ const Wohnung = ({ data }: { data: ImageQuery }): JSX.Element => (
                 <h3>Ferienwohnung Neßmersiel Haus Freia</h3>
               </header>
               <p>
-                Usnsere gemütliche Nichtraucherwohnung liegt in einer beliebten Ferienhaussiedlung im Küstenbadeort Neßmersiel. Bis zum Ort
+                Unsere gemütliche Nichtraucherwohnung liegt in einer beliebten Ferienhaussiedlung im Küstenbadeort Neßmersiel. Bis zum Ort
                 Dornum sind es ca. 6km. Dort befinden sich mehrere Supermärkte. Bis zum Deich sind es ca. 200 Meter, bis zum Strand etwa
                 1,5km. Dort befindet sich auch der Fährhafen, von dem aus die Insel Baltrum angefahren wird. Ein kleiner Edeka befindet sich
                 in fußläufiger Entfernung von der Wohnung hin zur Ortsmitte. Im Ort selbst befinden sich zahlreiche Cafés und Restaurants.
-                Auch der Indoor Spielpark Sturmfrei und die neu renovierte Wellness Oase sind nur ca. 300-400 Meter entfert. Neßmersiel ist
+                Auch der Indoor Spielpark Sturmfrei und die neu renovierte Wellness Oase sind nur ca. 300-400 Meter entfernt. Neßmersiel ist
                 auch der Ausgangspunkt für geführte Wattwanderungen durch das Weltnaturerbe Wattenmeer zur Insel Norderney und Baltrum.
               </p>
               <p>
