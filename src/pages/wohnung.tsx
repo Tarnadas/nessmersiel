@@ -81,8 +81,9 @@ const Wohnung = ({ data }: { data: ImageQuery }): JSX.Element => (
                 <h3>Preise</h3>
               </header>
               <ul>
-                <li>47€ pro Übernachtung vom 01.04. - 30.09.2019, restliche Zeit auf Anfrage.</li>
-                <li>30€ Endreinigung</li>
+                <li>
+                  45€ pro Übernachtung inklusive Bettwäsche Handtücher und Endreinigung vom 01.04. - 30.09.2019, restliche Zeit auf Anfrage.
+                </li>
                 <li>Kurtaxe 2,60€ pro Person muss gesondert abgerechnet werden.</li>
               </ul>
             </div>
