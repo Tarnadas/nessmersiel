@@ -2,11 +2,6 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import Layout from '../components/layout'
 
-import pic03 from '../assets/images/pic03.jpg'
-import pic08 from '../assets/images/pic08.jpg'
-import pic09 from '../assets/images/pic09.jpg'
-import pic10 from '../assets/images/pic10.jpg'
-
 const Elements = (props): JSX.Element => (
   <Layout>
     <Helmet>
@@ -597,86 +592,6 @@ const Elements = (props): JSX.Element => (
                 </div>
               </div>
             </form>
-
-            <h3>Image</h3>
-
-            <h4>Fit</h4>
-            <span className="image fit">
-              <img src={pic03} alt="" />
-            </span>
-            <div className="box alt">
-              <div className="grid-wrapper">
-                <div className="col-4">
-                  <span className="image fit">
-                    <img src={pic08} alt="" />
-                  </span>
-                </div>
-                <div className="col-4">
-                  <span className="image fit">
-                    <img src={pic09} alt="" />
-                  </span>
-                </div>
-                <div className="col-4">
-                  <span className="image fit">
-                    <img src={pic10} alt="" />
-                  </span>
-                </div>
-                <div className="col-4">
-                  <span className="image fit">
-                    <img src={pic10} alt="" />
-                  </span>
-                </div>
-                <div className="col-4">
-                  <span className="image fit">
-                    <img src={pic08} alt="" />
-                  </span>
-                </div>
-                <div className="col-4">
-                  <span className="image fit">
-                    <img src={pic09} alt="" />
-                  </span>
-                </div>
-                <div className="col-4">
-                  <span className="image fit">
-                    <img src={pic09} alt="" />
-                  </span>
-                </div>
-                <div className="col-4">
-                  <span className="image fit">
-                    <img src={pic10} alt="" />
-                  </span>
-                </div>
-                <div className="col-4">
-                  <span className="image fit">
-                    <img src={pic08} alt="" />
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            <h4>Left &amp; Right</h4>
-            <p>
-              <span className="image left">
-                <img src={pic09} alt="" />
-              </span>
-              Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis
-              in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac
-              pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis sagittis eget. tempus
-              euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing
-              accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget tempus vestibulum ante ipsum primis in
-              faucibus magna blandit adipiscing eu felis iaculis.
-            </p>
-            <p>
-              <span className="image right">
-                <img src={pic10} alt="" />
-              </span>
-              Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis
-              in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac
-              pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis sagittis eget. tempus
-              euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing
-              accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget tempus vestibulum ante ipsum primis in
-              faucibus magna blandit adipiscing eu felis iaculis.
-            </p>
 
             <h3>Box</h3>
             <div className="box">
