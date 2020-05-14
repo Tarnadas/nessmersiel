@@ -29,10 +29,9 @@ const Wohnung = ({ data }: { data: ImageQuery }): JSX.Element => (
           <p>
             Das Wohn-/Esszimmer ist mit Fernseher, einer gemütlichen Couch, Relaxsessel, rundem Tisch und Sitzgelegenheiten ausgestattet. In
             der Küchenzeile befinden sich ein E-Herd, Ceranfeld und Backofen, Mikrowelle, Kühlschrank mit Gefrierfach und genügend
-            Kleingeräte. Im Schlafzimmer ist ein großes 2x2 Meter Bett und ausreichend Platz für ein Kinderreisebett, welches wir kostenlos
-            zur Verfügung stellen. Ein Kinderhochstuhl ist auch vorhanden. Auch ist ein großer Südbalkon vorhanden, wo sie Ihre Pläne für
-            den nächsten Tag planen können. Ein Waschraum mit Waschmaschine und Trockner ist kostenpflichtig und ein abschließbarer Raum für
-            Ihre Fahrräder ist vorhanden.
+            Kleingeräte. Im Schlafzimmer ist ein großes 2x2 Meter Bett und ausreichend Platz für ein Kinderreisebett. Auch ist ein großer
+            Südbalkon vorhanden, wo sie Ihre Pläne für den nächsten Tag planen können. Ein Waschraum mit Waschmaschine und Trockner ist
+            kostenpflichtig und ein abschließbarer Raum für Ihre Fahrräder ist vorhanden.
           </p>
           <p>Haustiere sind nicht erlaubt. WLAN können wir leider auch nicht anbieten.</p>
           <ImageGallery
