@@ -13,9 +13,9 @@ const Contact = (props): JSX.Element => (
           <div className="contact-method">
             <span className="icon alt fa-phone" />
             <h3>Telefon</h3>
-            <span>+49(0)4943 38785644</span>
+            <span>+49(0)4933 8785644</span>
             <h3>Mobil</h3>
-            <span>+49(0)151/2241 3319</span>
+            <span>+49(0)151 2241 3319</span>
             <br />
             <span>Gerne auch WhatsApp</span>
           </div>
