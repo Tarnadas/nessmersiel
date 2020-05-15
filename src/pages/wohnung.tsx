@@ -81,9 +81,9 @@ const Wohnung = ({ data }: { data: ImageQuery }): JSX.Element => (
               </header>
               <ul>
                 <li>
-                  45€ pro Übernachtung inklusive Bettwäsche Handtücher und Endreinigung vom 01.04. - 30.09.2019, restliche Zeit auf Anfrage.
+                  45€ pro Übernachtung vom 01.04. - 30.09.2019, restliche Zeit auf Anfrage. Bettwäsche und Handtücher kann geliehen werden
+                  gegen eine Gebühr von 10€. Endreinigung kostet 25€.
                 </li>
-                <li>Kurtaxe 2,60€ pro Person muss gesondert abgerechnet werden.</li>
               </ul>
             </div>
           </div>
